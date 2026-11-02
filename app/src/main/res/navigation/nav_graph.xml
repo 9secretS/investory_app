@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.hfad.investory.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/cryptoFragment"
+        android:name="com.hfad.investory.CryptoFragment"
+        android:label="fragment_crypto"
+        tools:layout="@layout/fragment_crypto" >
+        <action
+            android:id="@+id/action_cryptoFragment_to_addCryptoFragment"
+            app:destination="@id/addCryptoFragment" />
+        <action
+            android:id="@+id/action_cryptoFragment_to_deleteCryptoFragment2"
+            app:destination="@id/deleteCryptoFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/stockFragment"
+        android:name="com.hfad.investory.StockFragment"
+        android:label="fragment_stock"
+        tools:layout="@layout/fragment_stock" >
+        <action
+            android:id="@+id/action_stockFragment_to_addStockFragment"
+            app:destination="@id/addStockFragment" />
+        <action
+            android:id="@+id/action_stockFragment_to_deleteStockFragment"
+            app:destination="@id/deleteStockFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.hfad.investory.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_authFragment"
+            app:destination="@id/authFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.hfad.investory.auth.AuthFragment"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth" >
+        <action
+            android:id="@+id/action_authFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCryptoFragment"
+        android:name="com.hfad.investory.database.AddCryptoFragment"
+        android:label="fragment_add_crypto"
+        tools:layout="@layout/fragment_add_crypto" />
+    <fragment
+        android:id="@+id/deleteCryptoFragment2"
+        android:name="com.hfad.investory.database.DeleteCryptoFragment"
+        android:label="fragment_delete_crypto"
+        tools:layout="@layout/fragment_delete_crypto" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/addStockFragment"
+        android:name="com.hfad.investory.database.AddStockFragment"
+        android:label="AddStockFragment" />
+    <fragment
+        android:id="@+id/deleteStockFragment"
+        android:name="com.hfad.investory.database.DeleteStockFragment"
+        android:label="DeleteStockFragment" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+</navigation>
